@@ -1,0 +1,1 @@
+dot -Tjpg -O model.dot

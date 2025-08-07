@@ -1,0 +1,179 @@
+# JSON to DOT Converter Configuration
+app:
+  name: JSON to DOT Converter
+  version: 1.0.0
+  
+# Diagram generation settings
+diagram:
+  # Default diagram settings
+  settings:
+    rankdir: TB
+    node-defaults:
+      fontname: Arial
+      shape: none
+  
+  # Template settings
+  templates:
+    base-path: classpath:/templates/
+    entity-template: entity.vm
+    relationship-template: relationship.vm
+    main-template: diagram.vm
+    
+  # Style configuration
+  styles:
+    # Default styles for all entities
+    default:
+      header:
+        bgcolor: "#333333"
+        forecolor: white
+        font: Arial
+        font-size: 12
+        bold: true
+      body:
+        bgcolor: "#FFFFFF"
+        forecolor: "#000000"
+        font: Arial
+        font-size: 10
+      separator:
+        color: "#333333"
+      mandatory:
+        bgcolor: "#FFFFFF"
+        forecolor: "#DC2626"
+        font: Arial
+        font-size: 10
+        bold: true
+      special-section:
+        bgcolor: "#FFFFFF"
+        forecolor: "#DC2626"
+        font: Arial
+        font-size: 10
+        bold: true
+      constraint:
+        bgcolor: "#F5F5F5"
+        forecolor: "#666666"
+        font: Arial
+        font-size: 9
+      relationship:
+        color: "#666666"
+        font-size: 9
+        style: solid
+    
+    # Entity-specific overrides
+    entities:
+      # Request entities (blue theme)
+      carrier:
+        header:
+          bgcolor: "#1E3A8A"
+          forecolor: white
+        body:
+          bgcolor: "#E0F2FE"
+          
+      shipper:
+        header:
+          bgcolor: "#1E3A8A"
+          forecolor: white
+        body:
+          bgcolor: "#E0F2FE"
+      
+      # Core entities (green theme)
+      contract:
+        header:
+          bgcolor: "#059669"
+          forecolor: white
+          
+      service_type:
+        header:
+          bgcolor: "#059669"
+          forecolor: white
+      
+      # Reference entities (red theme)
+      location:
+        header:
+          bgcolor: "#DC2626"
+          forecolor: white
+        body:
+          bgcolor: "#FEF2F2"
+      
+      # Rate entities (orange theme)
+      rate:
+        header:
+          bgcolor: "#EA580C"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      # Rate type entities (purple theme)
+      rate_type:
+        header:
+          bgcolor: "#7C3AED"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      # Rate break entities (pink theme)
+      rate_break:
+        header:
+          bgcolor: "#BE185D"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+      
+      # Terms entities (brown theme)
+      demurrage_rates:
+        header:
+          bgcolor: "#7C2D12"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      demurrage_rates_break:
+        header:
+          bgcolor: "#7C2D12"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      detention_rates:
+        header:
+          bgcolor: "#7C2D12"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      detention_rates_break:
+        header:
+          bgcolor: "#7C2D12"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      contract_charge:
+        header:
+          bgcolor: "#7C2D12"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+          
+      service_commitment:
+        header:
+          bgcolor: "#7C2D12"
+          forecolor: white
+        separator:
+          color: "#d0a8a8ff"
+
+# Logging configuration
+logging:
+  level:
+    com.example.converter: INFO
+    org.springframework.boot: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    
+# Spring Boot CLI configuration
+spring:
+  main:
+    web-application-type: none
+    banner-mode: off
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: NON_NULL

@@ -1,0 +1,37 @@
+## Main DOT diagram template
+// $diagram.title
+#if($diagram.version)
+// Version: $diagram.version
+#end
+#if($diagram.description)
+// $diagram.description
+#end
+
+digraph ${diagram.title.toLowerCase().replaceAll("[\s-]", "_")} {
+    rankdir=${diagram.rankdir};
+#if($config.settings.nodeDefaults)
+#set($attrs = [])
+#foreach($entry in $config.settings.nodeDefaults.entrySet())
+#set($dummy = $attrs.add("${entry.key}=\"${entry.value}\""))
+#end
+    node [#foreach($attr in $attrs)$attr#if($foreach.hasNext), #end#end];
+#end
+
+#foreach($entity in $diagram.entities)
+#parse("entity.vm")
+#end
+
+#if($diagram.relationships && $diagram.relationships.size() > 0)
+    // Relationships
+#foreach($relationship in $diagram.relationships)
+#parse("relationship.vm")
+#end
+#end
+
+#if($diagram.sameRankGroups && $diagram.sameRankGroups.size() > 0)
+    // Layout hints
+#foreach($group in $diagram.sameRankGroups)
+    {rank=same; #foreach($entity in $group)$entity#if($foreach.hasNext); #end#end;}
+#end
+#end
+}
