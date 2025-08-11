@@ -42,12 +42,42 @@ public class DiagramProperties {
             put("fontname", "Arial");
             put("shape", "none");
         }};
+        private TableSettings tableSettings = new TableSettings();
 
         public String getRankdir() { return rankdir; }
         public void setRankdir(String rankdir) { this.rankdir = rankdir; }
 
         public Map<String, String> getNodeDefaults() { return nodeDefaults; }
         public void setNodeDefaults(Map<String, String> nodeDefaults) { this.nodeDefaults = nodeDefaults; }
+
+        public TableSettings getTableSettings() { return tableSettings; }
+        public void setTableSettings(TableSettings tableSettings) { this.tableSettings = tableSettings; }
+    }
+
+    /**
+     * Table formatting settings
+     */
+    public static class TableSettings {
+        private String border = "2";
+        private String cellBorder = "1";
+        private String cellSpacing = "0";
+        private String cellPadding = "2";
+        private String separatorHeight = "2";
+
+        public String getBorder() { return border; }
+        public void setBorder(String border) { this.border = border; }
+
+        public String getCellBorder() { return cellBorder; }
+        public void setCellBorder(String cellBorder) { this.cellBorder = cellBorder; }
+
+        public String getCellSpacing() { return cellSpacing; }
+        public void setCellSpacing(String cellSpacing) { this.cellSpacing = cellSpacing; }
+
+        public String getCellPadding() { return cellPadding; }
+        public void setCellPadding(String cellPadding) { this.cellPadding = cellPadding; }
+
+        public String getSeparatorHeight() { return separatorHeight; }
+        public void setSeparatorHeight(String separatorHeight) { this.separatorHeight = separatorHeight; }
     }
 
     /**

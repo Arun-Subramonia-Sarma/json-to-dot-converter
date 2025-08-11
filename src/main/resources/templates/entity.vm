@@ -1,25 +1,26 @@
 ## Entity template
 #set($styles = $styleService.getEntityStyles($entity.id))
+#set($tableSettings = $config.settings.tableSettings)
 // $entity.name
 $entity.id [label=<
-<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TABLE BORDER="$tableSettings.border" CELLBORDER="$tableSettings.cellBorder" CELLSPACING="$tableSettings.cellSpacing" CELLPADDING="$tableSettings.cellPadding">
     <TR>
         <TD BGCOLOR="$styles.get('header_bg')" COLSPAN="3">
             <FONT COLOR="$styles.get('header_text')"><B>$entity.name</B></FONT>
         </TD>
     </TR>
-    <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="2"></TD></TR>
+    <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="$tableSettings.separatorHeight"></TD></TR>
     #foreach($field in $entity.fields)
         <TR><TD COLSPAN="2" ALIGN="LEFT">##
             #if($field.required)##
-                <FONT COLOR="$styles.get('mandatory_text')"><B> #set($padded = $field.name + "                  ")$padded.substring(0, 18) </B></FONT>##
+                <FONT COLOR="$styles.get('mandatory_text')"><B>$field.name</B></FONT>##
             #else##
-                <FONT COLOR="$styles.get('body_text')"> #set($padded = $field.name + "                                                  ")$padded.substring(0, 50) </FONT>##
+                <FONT COLOR="$styles.get('body_text')">$field.name</FONT>##
             #end##
         </TD><TD><FONT COLOR="$styles.get('body_text')">$field.type</FONT></TD></TR>
     #end
     #if($entity.specialSections && $entity.specialSections.size() > 0)
-        <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="$tableSettings.separatorHeight"></TD></TR>
         #foreach($section in $entity.specialSections)
             <TR><TD COLSPAN="2" ALIGN="LEFT">##
                 #if($section.style == "bold_red")##
@@ -31,12 +32,12 @@ $entity.id [label=<
         #end
     #end
     #if($entity.description && $entity.description != "")
-        <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="$tableSettings.separatorHeight"></TD></TR>
         <TR><TD COLSPAN="3" BGCOLOR="$styles.get('body_bg')">$entity.description</TD></TR>
     #end
     #if($entity.constraints && $entity.constraints.size() > 0)
         #foreach($constraint in $entity.constraints)
-            <TR><TD COLSPAN="3" BGCOLOR="$styles.get('constraint_bg')" HEIGHT="2"> $constraint </TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="$styles.get('constraint_bg')" HEIGHT="$tableSettings.separatorHeight"> $constraint </TD></TR>
         #end
     #end
 </TABLE>

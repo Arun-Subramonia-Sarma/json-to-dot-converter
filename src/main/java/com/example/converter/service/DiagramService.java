@@ -232,22 +232,30 @@ public class DiagramService {
         String diagramName = diagram.getTitle().toLowerCase().replaceAll("[\\s-]", "_");
         dot.append("digraph ").append(diagramName).append(" {\n");
         dot.append("    rankdir=").append(diagram.getRankdir()).append(";\n");
-        dot.append("    node [fontname=\"Arial\", shape=none];\n");
+        // Apply node defaults from configuration
+        Map<String, String> nodeDefaults = config.getSettings().getNodeDefaults();
+        if (!nodeDefaults.isEmpty()) {
+            dot.append("    node [");
+            boolean first = true;
+            for (Map.Entry<String, String> entry : nodeDefaults.entrySet()) {
+                if (!first) dot.append(", ");
+                dot.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\"");
+                first = false;
+            }
+            dot.append("];\n");
+        }
         dot.append("\n");
 
         // Entities
         for (EntityModel entity : diagram.getEntities()) {
-            dot.append(generateEntityDot(entity));
+            dot.append(generateEntityDot(entity, config));
         }
 
         // Relationships
         if (diagram.getRelationships() != null && !diagram.getRelationships().isEmpty()) {
             dot.append("    // Relationships\n");
             for (RelationshipModel relationship : diagram.getRelationships()) {
-                dot.append("    ").append(relationship.getFromEntity())
-                        .append(" -> ").append(relationship.getToEntity())
-                        .append(" [label=\"").append(relationship.getLabel())
-                        .append("\", fontsize=9, color=\"#666666\"];\n");
+                dot.append(generateRelationshipDot(relationship, config));
             }
             dot.append("\n");
         }
@@ -269,84 +277,74 @@ public class DiagramService {
         return dot.toString();
     }
 
-    private String generateEntityDot(EntityModel entity) {
-        Map<String, String> styles = styleService.getEntityStyles(entity.getId());
-        StringBuilder entityDot = new StringBuilder();
+    private String generateEntityDot(EntityModel entity, DiagramProperties config) {
+        // Try to use the entity template first
+        try {
+            VelocityContext context = new VelocityContext();
+            context.put("entity", entity);
+            context.put("config", config);
+            context.put("styleService", styleService);
 
-        entityDot.append("    // ").append(entity.getName()).append("\n");
-        entityDot.append("    ").append(entity.getId()).append(" [label=<\n");
-        entityDot.append("        <TABLE BORDER=\"2\" CELLBORDER=\"1\" CELLSPACING=\"0\" CELLPADDING=\"3\">\n");
-
-        // Header
-        entityDot.append("            <TR>\n");
-        entityDot.append("                <TD BGCOLOR=\"").append(styles.get("header_bg")).append("\" COLSPAN=\"3\">\n");
-        entityDot.append("                    <FONT COLOR=\"").append(styles.get("header_text")).append("\"><B>")
-                .append(entity.getName()).append("</B></FONT>\n");
-        entityDot.append("                </TD>\n");
-        entityDot.append("            </TR>\n");
-
-        // Separator
-        entityDot.append("            <TR><TD COLSPAN=\"3\" BGCOLOR=\"")
-                .append(styles.get("separator_color")).append("\" HEIGHT=\"2\"></TD></TR>\n");
-
-        // Fields
-        for (EntityModel.Field field : entity.getFields()) {
-            entityDot.append("            <TR>\n");
-            entityDot.append("                <TD COLSPAN=\"2\" ALIGN=\"LEFT\">\n");
-
-            if (field.isRequired()) {
-                entityDot.append("                    <FONT COLOR=\"").append(styles.get("mandatory_text"))
-                        .append("\"><B>").append(field.getName()).append("</B></FONT>\n");
-            } else {
-                entityDot.append("                    <FONT COLOR=\"").append(styles.get("body_text"))
-                        .append("\">").append(field.getName()).append("</FONT>\n");
-            }
-
-            entityDot.append("                </TD>\n");
-            entityDot.append("                <TD><FONT COLOR=\"").append(styles.get("body_text"))
-                    .append("\">").append(field.getType()).append("</FONT></TD>\n");
-            entityDot.append("            </TR>\n");
+            StringWriter writer = new StringWriter();
+            String templateName = config.getTemplates().getEntityTemplate();
+            velocityEngine.getTemplate(templateName).merge(context, writer);
+            return writer.toString();
+        } catch (Exception e) {
+            logger.warn("Entity template failed for entity {}, using simple fallback: {}", entity.getId(), e.getMessage());
+            return generateSimpleEntityDot(entity);
         }
+    }
 
-        // Special sections
-        if (entity.getSpecialSections() != null && !entity.getSpecialSections().isEmpty()) {
-            entityDot.append("            <TR><TD COLSPAN=\"3\" BGCOLOR=\"")
-                    .append(styles.get("separator_color")).append("\" HEIGHT=\"2\"></TD></TR>\n");
-
-            for (EntityModel.SpecialSection section : entity.getSpecialSections()) {
-                entityDot.append("            <TR>\n");
-                entityDot.append("                <TD COLSPAN=\"2\" ALIGN=\"LEFT\">\n");
-                entityDot.append("                    <FONT COLOR=\"").append(styles.get("special_section_text"))
-                        .append("\"><B>").append(section.getName()).append("</B></FONT>\n");
-                entityDot.append("                </TD>\n");
-                entityDot.append("                <TD><FONT COLOR=\"").append(styles.get("body_text"))
-                        .append("\">").append(section.getType()).append("</FONT></TD>\n");
-                entityDot.append("            </TR>\n");
+    /**
+     * Ultra-simple fallback for entity generation without HTML tables
+     */
+    private String generateSimpleEntityDot(EntityModel entity) {
+        StringBuilder dot = new StringBuilder();
+        
+        dot.append("    // ").append(entity.getName()).append("\n");
+        dot.append("    ").append(entity.getId()).append(" [label=\"").append(entity.getName());
+        
+        // Add fields as simple text
+        if (entity.getFields() != null && !entity.getFields().isEmpty()) {
+            dot.append("\\n");
+            for (EntityModel.Field field : entity.getFields()) {
+                if (field.isRequired()) {
+                    dot.append("+ ");
+                } else {
+                    dot.append("- ");
+                }
+                dot.append(field.getName()).append(": ").append(field.getType()).append("\\n");
             }
         }
+        
+        dot.append("\", shape=box];\n");
+        return dot.toString();
+    }
 
-        // Description
-        if (entity.getDescription() != null && !entity.getDescription().isEmpty()) {
-            entityDot.append("            <TR><TD COLSPAN=\"3\" BGCOLOR=\"")
-                    .append(styles.get("separator_color")).append("\" HEIGHT=\"2\"></TD></TR>\n");
-            entityDot.append("            <TR><TD COLSPAN=\"3\" BGCOLOR=\"").append(styles.get("body_bg"))
-                    .append("\">").append(entity.getDescription()).append("</TD></TR>\n");
+    private String generateRelationshipDot(RelationshipModel relationship, DiagramProperties config) {
+        // Try to use the relationship template first
+        try {
+            VelocityContext context = new VelocityContext();
+            context.put("relationship", relationship);
+            context.put("config", config);
+            context.put("styleService", styleService);
+
+            StringWriter writer = new StringWriter();
+            String templateName = config.getTemplates().getRelationshipTemplate();
+            velocityEngine.getTemplate(templateName).merge(context, writer);
+            return writer.toString();
+        } catch (Exception e) {
+            logger.warn("Relationship template failed for relationship {}, using simple fallback: {}", relationship.getId(), e.getMessage());
+            return generateSimpleRelationshipDot(relationship);
         }
+    }
 
-        // Constraints
-        if (entity.getConstraints() != null && !entity.getConstraints().isEmpty()) {
-            for (String constraint : entity.getConstraints()) {
-                entityDot.append("            <TR><TD COLSPAN=\"3\" BGCOLOR=\"")
-                        .append(styles.get("constraint_bg")).append("\" HEIGHT=\"2\">")
-                        .append(constraint).append("</TD></TR>\n");
-            }
-        }
-
-        entityDot.append("        </TABLE>\n");
-        entityDot.append("    >];\n");
-        entityDot.append("\n");
-
-        return entityDot.toString();
+    /**
+     * Ultra-simple fallback for relationship generation
+     */
+    private String generateSimpleRelationshipDot(RelationshipModel relationship) {
+        return "    " + relationship.getFromEntity() + " -> " + relationship.getToEntity() + 
+               " [label=\"" + relationship.getLabel() + "\"];\n";
     }
 
     private String getStringValue(JsonNode node, String fieldName, String defaultValue) {
