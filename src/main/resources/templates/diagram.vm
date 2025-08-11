@@ -18,13 +18,13 @@ rankdir=$diagram.rankdir;
 #end
 
 #foreach($entity in $diagram.entities)
-    #parse("entity.vm")
+    #parse("templates/entity.vm")
 #end
 
 #if($diagram.relationships && $diagram.relationships.size() > 0)
 // Relationships
     #foreach($relationship in $diagram.relationships)
-        #parse("relationship.vm")
+        #parse("templates/relationship.vm")
     #end
 #end
 

@@ -11,13 +11,19 @@ diagram:
     node-defaults:
       fontname: Arial
       shape: none
+    table-settings:
+      border: "2"
+      cell-border: "1"
+      cell-spacing: "0"
+      cell-padding: "3"
+      separator-height: "2"
   
   # Template settings
   templates:
     base-path: classpath:/templates/
-    entity-template: entity.vm
-    relationship-template: relationship.vm
-    main-template: diagram.vm
+    entity-template: templates/entity.vm
+    relationship-template: templates/relationship.vm
+    main-template: templates/diagram.vm
     
   # Style configuration
   styles:
