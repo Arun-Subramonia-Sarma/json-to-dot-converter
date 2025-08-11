@@ -1,3 +1,0 @@
-## Relationship template
-#set($relStyles = $styleService.getRelationshipStyles())
-    $relationship.fromEntity -> $relationship.toEntity [label="$relationship.label", fontsize=$relStyles.get('font_size'), color="$relStyles.get('color')"];

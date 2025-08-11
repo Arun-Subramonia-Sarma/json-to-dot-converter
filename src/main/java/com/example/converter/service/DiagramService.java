@@ -275,7 +275,7 @@ public class DiagramService {
 
         entityDot.append("    // ").append(entity.getName()).append("\n");
         entityDot.append("    ").append(entity.getId()).append(" [label=<\n");
-        entityDot.append("        <TABLE BORDER=\"2\" CELLBORDER=\"1\" CELLSPACING=\"0\" CELLPADDING=\"6\">\n");
+        entityDot.append("        <TABLE BORDER=\"2\" CELLBORDER=\"1\" CELLSPACING=\"0\" CELLPADDING=\"3\">\n");
 
         // Header
         entityDot.append("            <TR>\n");
@@ -315,7 +315,7 @@ public class DiagramService {
 
             for (EntityModel.SpecialSection section : entity.getSpecialSections()) {
                 entityDot.append("            <TR>\n");
-                entityDot.append("                <TD COLSPAN=\"2\" ALIGN=\"CENTER\">\n");
+                entityDot.append("                <TD COLSPAN=\"2\" ALIGN=\"LEFT\">\n");
                 entityDot.append("                    <FONT COLOR=\"").append(styles.get("special_section_text"))
                         .append("\"><B>").append(section.getName()).append("</B></FONT>\n");
                 entityDot.append("                </TD>\n");

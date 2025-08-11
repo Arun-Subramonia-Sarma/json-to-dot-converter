@@ -1,0 +1,3194 @@
+// Converted Data Model Schema
+// Version: 1.0
+
+digraph converted_data_model_schema {
+    rankdir=TB;
+    node [fontname="Arial", shape=none];
+
+    // Party
+    party [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Party</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Party Version
+    party_version [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Party Version</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>global_id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>industry</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">industry_code</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">is_independent</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>priority</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">segment</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">preferred_language</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>tax_id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>duns_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>onboarding_date</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">diversity_classification</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Party Operation
+    party_operation [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Party Operation</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>standard_loading_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">standard_unloading_time</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_appointment_required</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">special_handling_instructions</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">dock_specification</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">on_site_facilities</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">site_access_rules</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Certification
+    certification [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Certification</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">certifying_authority</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">valid_from</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">valid_to</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Party Finance
+    party_finance [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Party Finance</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">payment_term</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">default_currency</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">credit_limit</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">credit_score</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">finance_risk_rating</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">tax_withholding_requirements</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">tax_exemption_status</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">invoicing_preference</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">invoicing_method</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">billing_cycle</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">valid_from</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">valid_to</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Party Bank Information
+    party_bank_information [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Party Bank Information</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">branch</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">bank_code</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Party Payment Methods
+    party_payment_methods [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#004030" COLSPAN="3">
+                    <FONT COLOR="white"><B>Party Payment Methods</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">name</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">type</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Product
+    product [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Product</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Product Version
+    product_version [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Product Version</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">description</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>global_id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>gtin</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">sku</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">tenant_product_identifier</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">family</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>brand_name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>manufacturer_id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>harmonised_code</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">country_of_origin</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_hazardous</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_perishable</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">introduction_date</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">discontinuation_date</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DBEAFE">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Product Specification
+    product_specification [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Product Specification</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">type</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">name</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">value</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">upper_tolerance</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">lower_tolerance</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">is_critical</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DBEAFE">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Product Dimensions
+    product_dimensions [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Product Dimensions</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">length</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">width</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">height</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">weight</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">weight_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">volume</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">volume_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DBEAFE">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Product Category
+    product_category [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Product Category</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">description</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>taxonomy_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DBEAFE">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Product Logistics
+    product_logistics [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Product Logistics</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">storage_requirement</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">handling_instructions</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">hasmat_code</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">shelf_life</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">shelf_life_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">un_number</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">harmonised_code</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">country_of_origin_requirement</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">stackability_factor</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">packaging_type</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">packages_per_pallet</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">freight_class</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DBEAFE">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Inventory Policy
+    inventory_policy [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#57564F" COLSPAN="3">
+                    <FONT COLOR="white"><B>Inventory Policy</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">safety_stock_level</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">reorder_point</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">economical_order_qty</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">minimum_order_qty</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">maximum_order_qty</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">abc_classification</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">cycle_count_frequency</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">cycle_count_frequency_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DDDAD0" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#DBEAFE">A product is an item or service offered by a business.</TD></TR>
+        </TABLE>
+    >];
+
+    // Location
+    location [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4DA8DA" COLSPAN="3">
+                    <FONT COLOR="white"><B>Location</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">tags</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF2F2">A location is a physical place where business activities occur.</TD></TR>
+        </TABLE>
+    >];
+
+    // Location Version
+    location_version [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4DA8DA" COLSPAN="3">
+                    <FONT COLOR="white"><B>Location Version</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>external_id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">geo_fence_radius</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF2F2">A location is a physical place where business activities occur.</TD></TR>
+        </TABLE>
+    >];
+
+    // Location_Details
+    location_details [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4DA8DA" COLSPAN="3">
+                    <FONT COLOR="white"><B>Location_Details</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>city</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>state</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>country</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>region</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>Auditable fields</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">object</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF2F2">A location is a physical place where business activities occur.</TD></TR>
+        </TABLE>
+    >];
+
+    // Address
+    address [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4DA8DA" COLSPAN="3">
+                    <FONT COLOR="white"><B>Address</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>line_1</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">line_2</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">line_3</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>county</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>city</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">district</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">state</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">country</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>zipcode</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>external_id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">geo_fence_radius</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF2F2">A location is a physical place where business activities occur.</TD></TR>
+        </TABLE>
+    >];
+
+    // Business Timing
+    business_timing [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4B352A" COLSPAN="3">
+                    <FONT COLOR="white"><B>Business Timing</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>day</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>start_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">end_time</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF3C7">A location is a physical place where business activities occur.</TD></TR>
+        </TABLE>
+    >];
+
+    // Contact
+    contact [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#1B3C53" COLSPAN="3">
+                    <FONT COLOR="white"><B>Contact</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F9F3EF" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F9F3EF" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F9F3EF" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#D1FAE5">A contact is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Contact Version
+    contact_version [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#1B3C53" COLSPAN="3">
+                    <FONT COLOR="white"><B>Contact Version</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F9F3EF" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>version_number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>email</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>phone</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F9F3EF" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F9F3EF" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#D1FAE5">A contact is an individual or organization that has a role in the business process.</TD></TR>
+        </TABLE>
+    >];
+
+    // Geo Fence Point
+    geo_fence_point [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4B352A" COLSPAN="3">
+                    <FONT COLOR="white"><B>Geo Fence Point</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>lat</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>lon</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF3C7">A location is a physical place where business activities occur.</TD></TR>
+        </TABLE>
+    >];
+
+    // Custom Field
+    custom_field [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4B352A" COLSPAN="3">
+                    <FONT COLOR="white"><B>Custom Field</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>value</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF3C7">A custom field is a user-defined field that can be added to any entity.</TD></TR>
+        </TABLE>
+    >];
+
+    // Tag
+    tag [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#4B352A" COLSPAN="3">
+                    <FONT COLOR="white"><B>Tag</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>key</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>value</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FEF3C7">A tag is a additional information that can be added to any entity.</TD></TR>
+        </TABLE>
+    >];
+
+    // Contract
+    contract [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Contract</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>number</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>group</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>effective_date</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">expiry_date</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A contract is a formal agreement between two or more parties.</TD></TR>
+        </TABLE>
+    >];
+
+    // Service Type
+    service_type [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Service Type</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>code</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">description</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>transit_mode</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>gl_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">external_id_1</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">external_id_2</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">performance_rating</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">number</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>priority</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>effective_date</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">expiry_date</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">The type of service provided in a contract.</TD></TR>
+        </TABLE>
+    >];
+
+    // Rate
+    rate [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Rate</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">rate_per_unit</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">rate_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">min_charge</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">max_charge</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">transit_time</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">transit_time_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">valid_period</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">valid_period_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>effective_date</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">expiry_date</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate is a specific price or cost associated with a service defined in the contract.</TD></TR>
+        </TABLE>
+    >];
+
+    // Rate Type
+    rate_type [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Rate Type</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>code</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">description</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>calculation_method</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate type defines the various pricing structures that can be applied to a service or contract.</TD></TR>
+        </TABLE>
+    >];
+
+    // Rate Break
+    rate_break [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Rate Break</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>break_value</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>break_value_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">rate_per_unit</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">rate_uom</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>effective_date</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">expiry_date</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">date</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate break defines the conditions under which a different rate applies.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">break_value_type : lower_limit / higher_limit</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">status: active / inactive / archived</TD></TR>
+        </TABLE>
+    >];
+
+    // Demurrage Rates
+    demurrage_rates [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Demurrage Rates</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>free_days</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>calculation_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>charges</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>direction</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">Demurrage rates are charges applied for the prolonged use of a service beyond the agreed-upon time.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">direction : export / import</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">calculation_type : combined / standard</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">status: active / inactive / archived</TD></TR>
+        </TABLE>
+    >];
+
+    // Demurrage Rates Break
+    demurrage_rates_break [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Demurrage Rates Break</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>break_value</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>break_value_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>charges</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate break defines the conditions under which a different rate applies.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">break_value_type : lower_limit / higher_limit</TD></TR>
+        </TABLE>
+    >];
+
+    // Detention Rates
+    detention_rates [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Detention Rates</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>free_days</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>calculation_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>charges</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>direction</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">Detention rates are charges applied for the prolonged use of a service beyond the agreed-upon time.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">direction : export / import</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">calculation_type : combined / standard</TD></TR>
+        </TABLE>
+    >];
+
+    // Detention Rates Break
+    detention_rates_break [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Detention Rates Break</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>break_value</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>break_value_type</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>charges</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#000000">notes</FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate break defines the conditions under which a different rate applies.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2">break_value_type : lower_limit / higher_limit</TD></TR>
+        </TABLE>
+    >];
+
+    // Contract Charge
+    contract_charge [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Contract Charge</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">The charges applied for the utilisation of the services defined in the contract.</TD></TR>
+        </TABLE>
+    >];
+
+    // Service Commitment
+    service_commitment [label=<
+        <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+            <TR>
+                <TD BGCOLOR="#722323" COLSPAN="3">
+                    <FONT COLOR="white"><B>Service Commitment</B></FONT>
+                </TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>id</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">UUID</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>name</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>code</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>transit_min</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>transit_max</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>transit_uom</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>delivery_by_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>validate_period</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">int</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>validate_period_uom</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>cut_off_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_guaranteed</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>status</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">ENUM</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>is_deleted</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">bool</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>created_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_time</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">timestamp</FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="2" ALIGN="LEFT">
+                    <FONT COLOR="#DC2626"><B>updated_by</B></FONT>
+                </TD>
+                <TD><FONT COLOR="#000000">string</FONT></TD>
+            </TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">The commitment to provide a service at a defined level.</TD></TR>
+        </TABLE>
+    >];
+
+    // Relationships
+    party -> party_version [label="CURRENT_VERSION", fontsize=9, color="#666666"];
+    party -> party [label="PARENT", fontsize=9, color="#666666"];
+    party -> party [label="ULTIMATE_PARENT", fontsize=9, color="#666666"];
+    party -> party_operation [label="PERFORMS", fontsize=9, color="#666666"];
+    party_version -> party_version [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    party -> party [label="ROLE", fontsize=9, color="#666666"];
+    party -> certification [label="CERTIFIED_FOR", fontsize=9, color="#666666"];
+    party -> party_finance [label="HAS_FINANCIAL_TERMS", fontsize=9, color="#666666"];
+    party_finance -> party_bank_information [label="HAS", fontsize=9, color="#666666"];
+    party -> party [label="SUPPLIES_TO", fontsize=9, color="#666666"];
+    product -> product_version [label="CURRENT_VERSION", fontsize=9, color="#666666"];
+    product -> product [label="PARENT", fontsize=9, color="#666666"];
+    product -> product [label="ULTIMATE_PARENT", fontsize=9, color="#666666"];
+    product_version -> product_version [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    product -> product_category [label="BELONGS_TO", fontsize=9, color="#666666"];
+    product -> product_dimensions [label="HAS", fontsize=9, color="#666666"];
+    product -> product_logistics [label="HAS", fontsize=9, color="#666666"];
+    product -> product_specification [label="HAS", fontsize=9, color="#666666"];
+    product -> inventory_policy [label="HAS", fontsize=9, color="#666666"];
+    product_category -> product_category [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    product_dimensions -> product_dimensions [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    product_logistics -> product_logistics [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    product_specification -> product_specification [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    inventory_policy -> inventory_policy [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    location -> location_version [label="CURRENT_VERSION", fontsize=9, color="#666666"];
+    location -> location [label="PARENT", fontsize=9, color="#666666"];
+    location -> location [label="ULTIMATE_PARENT", fontsize=9, color="#666666"];
+    location_version -> location_version [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    location -> address [label="HAS_ADDRESS", fontsize=9, color="#666666"];
+    location -> address [label="HAS_PARTY_ADDRESS", fontsize=9, color="#666666"];
+    address -> address [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    address -> address [label="PARENT", fontsize=9, color="#666666"];
+    address -> address [label="ULTIMATE_PARENT", fontsize=9, color="#666666"];
+    location -> business_timing [label="OPERATING_TIME", fontsize=9, color="#666666"];
+    location -> business_timing [label="PARTY_OPERATING_TIME", fontsize=9, color="#666666"];
+    contact -> contact_version [label="CURRENT_VERSION", fontsize=9, color="#666666"];
+    contact -> contact [label="PARENT", fontsize=9, color="#666666"];
+    contact -> contact [label="ULTIMATE_PARENT", fontsize=9, color="#666666"];
+    contact_version -> contact_version [label="NEXT_VERSION", fontsize=9, color="#666666"];
+    contact -> contact [label="NETWORK_WITH", fontsize=9, color="#666666"];
+    party -> contact [label="HAS", fontsize=9, color="#666666"];
+    location -> contact [label="HAS", fontsize=9, color="#666666"];
+    product -> party [label="BELONGS_TO", fontsize=9, color="#666666"];
+    party -> location [label="HAS_FACILITY", fontsize=9, color="#666666"];
+    location -> geo_fence_point [label="HAS", fontsize=9, color="#666666"];
+    address -> geo_fence_point [label="HAS", fontsize=9, color="#666666"];
+    product -> custom_field [label="HAS", fontsize=9, color="#666666"];
+    party -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    party_version -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    party_operation -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    certification -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    party_finance -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    party_bank_information -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    party_payment_methods -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    product -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    product_version -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    product_specification -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    product_dimensions -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    product_category -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    product_logistics -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    inventory_policy -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    location -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    location_version -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    address -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    business_timing -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    contact -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    contact_version -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+    contract -> party [label="CARRIER_PARTY", fontsize=9, color="#666666"];
+    contract -> party [label="SHIPPER_PARTY", fontsize=9, color="#666666"];
+    contract -> rate [label="SPECIFIES_RATE", fontsize=9, color="#666666"];
+    contract -> service_type [label="COVERS", fontsize=9, color="#666666"];
+    contract -> contract_charge [label="HAS_CHARGE", fontsize=9, color="#666666"];
+    contract -> demurrage_rates [label="DEFINES_DEMURRAGE", fontsize=9, color="#666666"];
+    contract -> detention_rates [label="DEFINES_DETENTION", fontsize=9, color="#666666"];
+    contract -> location_details [label="SOURCE_LOCATION", fontsize=9, color="#666666"];
+    contract -> location_details [label="DESTINATION_LOCATION", fontsize=9, color="#666666"];
+    rate -> rate_type [label="OF_TYPE", fontsize=9, color="#666666"];
+    rate -> rate_break [label="APPLIES_BREAK", fontsize=9, color="#666666"];
+    demurrage_rates -> demurrage_rates_break [label="APPLIES_BREAK", fontsize=9, color="#666666"];
+    detention_rates -> detention_rates_break [label="APPLIES_BREAK", fontsize=9, color="#666666"];
+    service_type -> service_commitment [label="HAS_COMMITMENT", fontsize=9, color="#666666"];
+    location -> location_details [label="BELONGS_TO", fontsize=9, color="#666666"];
+    location -> address [label="HAS_REGION", fontsize=9, color="#666666"];
+    address -> location_details [label="BELONGS_TO", fontsize=9, color="#666666"];
+
+    // Layout hints
+    {rank=same; party;}
+    {rank=same; party_version; party_operation; party_finance; certification;}
+    {rank=same; party_payment_methods;}
+    {rank=same; party_bank_information;}
+    {rank=same; product;}
+    {rank=same; product_version; product_specification; product_dimensions;}
+    {rank=same; product_category; product_logistics; inventory_policy;}
+    {rank=same; location;}
+    {rank=same; location_version;}
+    {rank=same; address;}
+    {rank=same; business_timing;}
+    {rank=same; contact;}
+    {rank=same; contact_version;}
+    {rank=same; contract;}
+    {rank=same; rate; demurrage_rates; detention_rates;}
+    {rank=same; service_type; service_commitment;}
+}

@@ -74,92 +74,300 @@ diagram:
           forecolor: white
         body:
           bgcolor: "#E0F2FE"
-      
-      # Core entities (green theme)
-      contract:
+ #########################################################################
+ #   PARTY
+ #########################################################################
+      party:
         header:
-          bgcolor: "#059669"
-          forecolor: white
-          
-      service_type:
-        header:
-          bgcolor: "#059669"
-          forecolor: white
-      
-      # Reference entities (red theme)
-      location:
-        header:
-          bgcolor: "#DC2626"
+          bgcolor: "#004030"
           forecolor: white
         body:
-          bgcolor: "#FEF2F2"
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+      party_version:
+        header:
+          bgcolor: "#004030"
+          forecolor: white
+        body:
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+      party_operation:
+        header:
+          bgcolor: "#004030"
+          forecolor: white
+        body:
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+      party_finance:
+        header:
+          bgcolor: "#004030"
+          forecolor: white
+        body:
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+      party_bank_information:
+        header:
+          bgcolor: "#004030"
+          forecolor: white
+        body:
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+      certification:
+        header:
+          bgcolor: "#004030"
+          forecolor: white
+        body:
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+      party_payment_methods:
+        header:
+          bgcolor: "#004030"
+          forecolor: white
+        body:
+          bgcolor: "#4A9782"
+        separator:
+          color: "#DCD0A8"
+
+#########################################################################
+#   PRODUCT
+#########################################################################
+      product:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DDDAD0"
+        separator:
+          color: "#DDDAD0"
+      product_version:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DBEAFE"
+        separator:
+          color: "#DDDAD0"
+      product_dimensions:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DBEAFE"
+        separator:
+          color: "#DDDAD0"
+      product_category:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DBEAFE"
+        separator:
+          color: "#DDDAD0"
+      inventory_policy:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DBEAFE"
+        separator:
+          color: "#DDDAD0"
+      product_logistics:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DBEAFE"
+        separator:
+          color: "#DDDAD0"
+      product_specification:
+        header:
+          bgcolor: "#57564F"
+          forecolor: white
+        body:
+          bgcolor: "#DBEAFE"
+        separator:
+          color: "#DDDAD0"
+#########################################################################
+#   LOCATION
+#########################################################################
+      location:
+          header:
+            bgcolor: "#4DA8DA"
+            forecolor: white
+          body:
+            bgcolor: "#FEF2F2"
+          separator:
+            color: "#F5F5F5"
+      location_version:
+          header:
+            bgcolor: "#4DA8DA"
+            forecolor: white
+          body:
+            bgcolor: "#FEF2F2"
+          separator:
+            color: "#F5F5F5"
+      address:
+          header:
+            bgcolor: "#4DA8DA"
+            forecolor: white
+          body:
+            bgcolor: "#FEF2F2"
+          separator:
+            color: "#F5F5F5"
+      location_details:
+          header:
+            bgcolor: "#4DA8DA"
+            forecolor: white
+          body:
+            bgcolor: "#FEF2F2"
+          separator:
+            color: "#F5F5F5"
+#########################################################################
+#   CONTACT
+#########################################################################
+      contact:
+        header:
+          bgcolor: "#1B3C53"
+          forecolor: white
+        body:
+          bgcolor: "#D1FAE5"
+        separator:
+          color: "#F9F3EF"
+      contact_version:
+        header:
+          bgcolor: "#1B3C53"
+          forecolor: white
+        body:
+          bgcolor: "#D1FAE5"
+        separator:
+          color: "#F9F3EF"
+#########################################################################
+#   COMMON
+#########################################################################
+      tag:
+        header:
+          bgcolor: "#4B352A"
+          forecolor: white
+        body:
+          bgcolor: "#FEF3C7"
+        separator:
+          color: "#F0F2BD"
+      geo_fence_point:
+        header:
+          bgcolor: "#4B352A"
+          forecolor: white
+        body:
+          bgcolor: "#FEF3C7"
+        separator:
+          color: "#F0F2BD"
+      custom_field:
+        header:
+          bgcolor: "#4B352A"
+          forecolor: white
+        body:
+          bgcolor: "#FEF3C7"
+        separator:
+          color: "#F0F2BD"
+      business_timing:
+        header:
+          bgcolor: "#4B352A"
+          forecolor: white
+        body:
+          bgcolor: "#FEF3C7"
+        separator:
+          color: "#F0F2BD"
+#########################################################################
+#   RATE
+#########################################################################
+      contract:
+        header:
+          bgcolor: "#722323"
+          forecolor: white
+        separator:
+          color: "#FFECCC"
+
+      service_type:
+        header:
+          bgcolor: "#722323"
+          forecolor: white
+        separator:
+          color: "#FFECCC"
+
+      service_commitment:
+        header:
+          bgcolor: "#722323"
+          forecolor: white
+        separator:
+          color: "#FFECCC"
+
       
       # Rate entities (orange theme)
       rate:
         header:
-          bgcolor: "#EA580C"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
       # Rate type entities (purple theme)
       rate_type:
         header:
-          bgcolor: "#7C3AED"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
       # Rate break entities (pink theme)
       rate_break:
         header:
-          bgcolor: "#BE185D"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
       
       # Terms entities (brown theme)
       demurrage_rates:
         header:
-          bgcolor: "#7C2D12"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
       demurrage_rates_break:
         header:
-          bgcolor: "#7C2D12"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
       detention_rates:
         header:
-          bgcolor: "#7C2D12"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
       detention_rates_break:
         header:
-          bgcolor: "#7C2D12"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
       contract_charge:
         header:
-          bgcolor: "#7C2D12"
+          bgcolor: "#722323"
           forecolor: white
         separator:
-          color: "#d0a8a8ff"
+          color: "#FFECCC"
           
-      service_commitment:
-        header:
-          bgcolor: "#7C2D12"
-          forecolor: white
-        separator:
-          color: "#d0a8a8ff"
+
 
 # Logging configuration
 logging:

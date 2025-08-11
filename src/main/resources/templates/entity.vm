@@ -2,7 +2,7 @@
 #set($styles = $styleService.getEntityStyles($entity.id))
 // $entity.name
 $entity.id [label=<
-<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
     <TR>
         <TD BGCOLOR="$styles.get('header_bg')" COLSPAN="3">
             <FONT COLOR="$styles.get('header_text')"><B>$entity.name</B></FONT>
@@ -21,7 +21,7 @@ $entity.id [label=<
     #if($entity.specialSections && $entity.specialSections.size() > 0)
         <TR><TD COLSPAN="3" BGCOLOR="$styles.get('separator_color')" HEIGHT="2"></TD></TR>
         #foreach($section in $entity.specialSections)
-            <TR><TD COLSPAN="2" ALIGN="CENTER">##
+            <TR><TD COLSPAN="2" ALIGN="LEFT">##
                 #if($section.style == "bold_red")##
                     <FONT COLOR="$styles.get('special_section_text')"><B> $section.name </B></FONT>##
                 #else##
