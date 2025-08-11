@@ -165,6 +165,7 @@ public class DiagramService {
                 sectionModel.setName(sectionNode.get("name").asText());
                 sectionModel.setType(sectionNode.get("type").asText());
                 sectionModel.setStyle(getStringValue(sectionNode, "style", "bold_red"));
+                sectionModel.setIs_required(sectionNode.path("is_required").asBoolean(false));
                 sectionList.add(sectionModel);
             }
             entityModel.setSpecialSections(sectionList);

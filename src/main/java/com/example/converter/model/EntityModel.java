@@ -59,6 +59,7 @@ public class EntityModel {
         private String name;
         private String type;
         private String style;
+        private boolean is_required;
 
         // Getters and setters
         public String getName() { return name; }
@@ -69,5 +70,8 @@ public class EntityModel {
 
         public String getStyle() { return style; }
         public void setStyle(String style) { this.style = style; }
+
+        public boolean isIs_required() { return is_required; }
+        public void setIs_required(boolean is_required) { this.is_required = is_required; }
     }
 }
