@@ -1,0 +1,726 @@
+{
+  "metadata": {
+    "title": "Converted Data Model Schema",
+    "version": "1.0",
+    "description": "Converted from old schema format",
+    "created_date": "2025-08-08T11:21:01.572Z",
+    "created_by": "Schema Converter"
+  },
+  "diagram_settings": {
+    "rankdir": "TB",
+    "node_defaults": {
+      "fontname": "Arial",
+      "shape": "none"
+    }
+  },
+  "entities": [
+    {
+      "id": "party",
+      "name": "Party",
+      "domain": "Party",
+      "description": "A party is an individual or organization that has a role in the business process.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true}
+      ],
+      "unique_keys": {
+        "u1": ["id"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "party_version",
+      "name": "Party Version",
+      "domain": "Party",
+      "description": "A party is an individual or organization that has a role in the business process.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "version_number", "type": "int", "is_required": true, "is_key": true},
+        {"name": "name", "type": "string", "is_required": true, "is_key": false},
+        {"name": "global_id", "type": "UUID", "is_required": true, "is_key": false},
+        {"name": "type", "type": "ENUM", "is_required": true, "is_key": false},
+        {"name": "status", "type": "ENUM", "is_required": true, "is_key": false},
+        {"name": "industry", "type": "string", "is_required": true, "is_key": false},
+        {"name": "industry_code", "type": "ENUM", "is_required": false, "is_key": false},
+        {"name": "is_independent", "type": "bool", "is_required": false, "is_key": false},
+        {"name": "priority", "type": "string", "is_required": true, "is_key": false},
+        {"name": "segment", "type": "string", "is_required": false, "is_key": false},
+        {"name": "preferred_language", "type": "string", "is_required": false, "is_key": false},
+        {"name": "tax_id", "type": "UUID", "is_required": true, "is_key": false},
+        {"name": "duns_number", "type": "int", "is_required": true, "is_key": false},
+        {"name": "onboarding_date", "type": "date", "is_required": true, "is_key": false},
+        {"name": "diversity_classification", "type": "string", "is_required": false, "is_key": false}
+      ],
+      "unique_keys": {
+        "u2": ["id", "version_number"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "location",
+      "name": "Location",
+      "domain": "Location",
+      "description": "A location is a physical place where business activities occur.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "tags", "type": "string", "is_required": false, "is_key": false}
+      ],
+      "unique_keys": {
+        "u16": ["id"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "location_version",
+      "name": "Location Version",
+      "domain": "Location",
+      "description": "A location is a physical place where business activities occur.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "version_number", "type": "int", "is_required": true, "is_key": true},
+        {"name": "name", "type": "string", "is_required": true, "is_key": true},
+        {"name": "external_id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "type", "type": "ENUM", "is_required": true, "is_key": false},
+        {"name": "geo_fence_radius", "type": "string", "is_required": false, "is_key": false}
+      ],
+      "unique_keys": {
+        "u17": ["id", "version_number"],
+        "u18": [
+          "id",
+          "version_number",
+          "name",
+          ""
+        ],
+        "u19": [
+          "id",
+          "version_number",
+          "external_id"
+        ]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "location_details",
+      "name": "Location_Details",
+      "domain": "Location",
+      "description": "A location is a physical place where business activities occur.",
+      "fields": [
+        {"name": "id", "type": "string", "is_required": true, "is_key": true},
+        {"name": "city", "type": "string", "is_required": true},
+        {"name": "state", "type": "string", "is_required": true},
+        {"name": "country", "type": "string", "is_required": true},
+        {"name": "region", "type": "string", "is_required": true}
+      ],
+      "special_sections": [
+        {"name": "Auditable fields", "type": "object", "style": "bold_red"}
+      ]
+    },
+    {
+      "id": "address",
+      "name": "Address",
+      "domain": "Location",
+      "description": "A location is a physical place where business activities occur.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "version_number", "type": "int", "is_required": true, "is_key": true},
+        {"name": "name", "type": "string", "is_required": true, "is_key": false},
+        {"name": "line_1", "type": "string", "is_required": true, "is_key": false},
+        {"name": "line_2", "type": "string", "is_required": false, "is_key": false},
+        {"name": "line_3", "type": "string", "is_required": false, "is_key": false},
+        {"name": "county", "type": "int", "is_required": true, "is_key": false},
+        {"name": "city", "type": "string", "is_required": true, "is_key": false},
+        {"name": "district", "type": "string", "is_required": false, "is_key": false},
+        {"name": "state", "type": "string", "is_required": false, "is_key": false},
+        {"name": "country", "type": "int", "is_required": false, "is_key": false},
+        {"name": "zipcode", "type": "ENUM", "is_required": true, "is_key": false},
+        {"name": "external_id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "geo_fence_radius", "type": "string", "is_required": false, "is_key": false}
+      ],
+      "unique_keys": {
+        "u20": ["id", "version_number"],
+        "u21": [
+          "id",
+          "version_number",
+          "external_id"
+        ]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "domain": "Contact",
+      "description": "A contact is an individual or organization that has a role in the business process.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true}
+      ],
+      "unique_keys": {
+        "u23": ["id"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "contact_version",
+      "name": "Contact Version",
+      "domain": "Contact",
+      "description": "A contact is an individual or organization that has a role in the business process.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "version_number", "type": "int", "is_required": true, "is_key": true},
+        {"name": "name", "type": "string", "is_required": true, "is_key": false},
+        {"name": "email", "type": "string", "is_required": true, "is_key": false},
+        {"name": "phone", "type": "string", "is_required": true, "is_key": false}
+      ],
+      "unique_keys": {
+        "u24": ["id", "version_number"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "geo_fence_point",
+      "name": "Geo Fence Point",
+      "domain": "Location",
+      "description": "A location is a physical place where business activities occur.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "lat", "type": "string", "is_required": true, "is_key": false},
+        {"name": "lon", "type": "string", "is_required": true, "is_key": false}
+      ],
+      "unique_keys": {
+        "u25": ["id"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "custom_field",
+      "name": "Custom Field",
+      "domain": "Common",
+      "description": "A custom field is a user-defined field that can be added to any entity.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "name", "type": "string", "is_required": true, "is_key": false},
+        {"name": "value", "type": "string", "is_required": true, "is_key": false}
+      ],
+      "unique_keys": {
+        "u26": ["id"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    },
+    {
+      "id": "tag",
+      "name": "Tag",
+      "domain": "Common",
+      "description": "A tag is a additional information that can be added to any entity.",
+      "fields": [
+        {"name": "id", "type": "UUID", "is_required": true, "is_key": true},
+        {"name": "key", "type": "string", "is_required": true, "is_key": true},
+        {"name": "value", "type": "string", "is_required": true, "is_key": false}
+      ],
+      "unique_keys": {
+        "u27": ["id"],
+        "u28": ["key"]
+      },
+      "special_sections": [
+        {"name": "is_deleted", "type": "bool", "is_required": true, "is_key": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "created_by", "type": "string", "is_required": true, "is_key": false},
+        {"name": "updated_time", "type": "timestamp", "is_required": true, "is_key": false},
+        {"name": "updated_by", "type": "string", "is_required": true, "is_key": false}
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_1",
+      "from_entity": "party",
+      "to_entity": "party_version",
+      "label": "CURRENT_VERSION",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_2",
+      "from_entity": "party",
+      "to_entity": "party",
+      "label": "PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_3",
+      "from_entity": "party",
+      "to_entity": "party",
+      "label": "ULTIMATE_PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_5",
+      "from_entity": "party_version",
+      "to_entity": "party_version",
+      "label": "NEXT_VERSION",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_6",
+      "from_entity": "party",
+      "to_entity": "party",
+      "label": "ROLE",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_10",
+      "from_entity": "party",
+      "to_entity": "party",
+      "label": "SUPPLIES_TO",
+      "relationship_type": "many_to_many",
+      "fields": [
+        {"name": "product_id", "type": "UUID", "is_required": true},
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_25",
+      "from_entity": "location",
+      "to_entity": "location_version",
+      "label": "CURRENT_VERSION",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_26",
+      "from_entity": "location",
+      "to_entity": "location",
+      "label": "PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_27",
+      "from_entity": "location",
+      "to_entity": "location",
+      "label": "ULTIMATE_PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_28",
+      "from_entity": "location_version",
+      "to_entity": "location_version",
+      "label": "NEXT_VERSION",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_29",
+      "from_entity": "location",
+      "to_entity": "address",
+      "label": "HAS_ADDRESS",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_30",
+      "from_entity": "location",
+      "to_entity": "address",
+      "label": "HAS_PARTY_ADDRESS",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "party_id", "type": "UUID", "is_required": true},
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_31",
+      "from_entity": "address",
+      "to_entity": "address",
+      "label": "NEXT_VERSION",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_32",
+      "from_entity": "address",
+      "to_entity": "address",
+      "label": "PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_33",
+      "from_entity": "address",
+      "to_entity": "address",
+      "label": "ULTIMATE_PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_36",
+      "from_entity": "contact",
+      "to_entity": "contact_version",
+      "label": "CURRENT_VERSION",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_37",
+      "from_entity": "contact",
+      "to_entity": "contact",
+      "label": "PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_38",
+      "from_entity": "contact",
+      "to_entity": "contact",
+      "label": "ULTIMATE_PARENT",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_39",
+      "from_entity": "contact_version",
+      "to_entity": "contact_version",
+      "label": "NEXT_VERSION",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_40",
+      "from_entity": "contact",
+      "to_entity": "contact",
+      "label": "NETWORK_WITH",
+      "relationship_type": "many_to_many",
+      "fields": [
+        {"name": "from_role", "type": "string", "is_required": true},
+        {"name": "to_role", "type": "string", "is_required": true},
+        {"name": "network_id_key", "type": "string", "is_required": false},
+        {"name": "network_id_value", "type": "string", "is_required": false},
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_41",
+      "from_entity": "party",
+      "to_entity": "contact",
+      "label": "HAS",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_42",
+      "from_entity": "location",
+      "to_entity": "contact",
+      "label": "HAS",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_44",
+      "from_entity": "party",
+      "to_entity": "location",
+      "label": "HAS_FACILITY",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "purpose", "type": "string", "is_required": true},
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_45",
+      "from_entity": "location",
+      "to_entity": "geo_fence_point",
+      "label": "HAS",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_46",
+      "from_entity": "address",
+      "to_entity": "geo_fence_point",
+      "label": "HAS",
+      "relationship_type": "one_to_many",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_48",
+      "from_entity": "party",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_49",
+      "from_entity": "party_version",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_62",
+      "from_entity": "location",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_63",
+      "from_entity": "location_version",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_64",
+      "from_entity": "address",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_66",
+      "from_entity": "contact",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {
+      "id": "rel_67",
+      "from_entity": "contact_version",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
+    {"id": "rel_location_area", "from_entity": "location", "to_entity": "location_details", "label": "BELONGS_TO", "relationship_type": "one_to_many"},
+    {"id": "rel_location_address", "from_entity": "location", "to_entity": "address", "label": "HAS_REGION", "relationship_type": "one_to_many"},
+    {"id": "rel_address_area", "from_entity": "address", "to_entity": "location_details", "label": "BELONGS_TO", "relationship_type": "one_to_many"}
+  ],
+  "layout_hints": {
+    "same_rank_groups": [
+      ["contact"],
+      ["contact_version"],
+      ["party"],
+      ["party_version"],
+      ["product"],
+      ["product_version"],
+      ["location"],
+      ["location_version"],
+      ["address"]
+    ]
+  }
+}
