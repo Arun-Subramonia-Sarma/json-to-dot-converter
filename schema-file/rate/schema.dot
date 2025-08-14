@@ -1,0 +1,493 @@
+// Converted Data Model Schema
+// Version: 1.0
+// Converted from old schema format
+
+digraph converted_data_model_schema {
+rankdir=TB;
+    node [shape="none", fontname="Arial"];
+
+// Party
+party [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#004030" COLSPAN="3">
+            <FONT COLOR="white"><B>Party</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#004030"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#004030"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#004030"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+</TABLE>
+>];
+// Party Version
+party_version [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#004030" COLSPAN="3">
+            <FONT COLOR="white"><B>Party Version</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#004030"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#004030"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#004030"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>version_number</B></FONT>        </TD><TD><FONT COLOR="#000000">int</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>name</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>global_id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>type</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>industry</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">industry_code</FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">is_independent</FONT>        </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>priority</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">segment</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">preferred_language</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>tax_id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>duns_number</B></FONT>        </TD><TD><FONT COLOR="#000000">int</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>onboarding_date</B></FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">diversity_classification</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#DCD0A8" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#4A9782">A party is an individual or organization that has a role in the business process.</TD></TR>
+</TABLE>
+>];
+// Location_Details
+location_details [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#4DA8DA" COLSPAN="3">
+            <FONT COLOR="white"><B>Location_Details</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#4DA8DA"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#4DA8DA"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#4DA8DA"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>city</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>state</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>country</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>region</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> Auditable fields </B></FONT>            </TD><TD><FONT COLOR="#000000">object</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#000000">false</FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FEF2F2">A location is a physical place where business activities occur.</TD></TR>
+</TABLE>
+>];
+// Tag
+tag [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#4B352A" COLSPAN="3">
+            <FONT COLOR="white"><B>Tag</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#4B352A"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#4B352A"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#4B352A"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>key</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>value</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#F0F2BD" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FEF3C7">A tag is a additional information that can be added to any entity.</TD></TR>
+</TABLE>
+>];
+// Contract
+contract [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Contract</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>name</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>number</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>group</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>effective_date</B></FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">expiry_date</FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A contract is a formal agreement between two or more parties.</TD></TR>
+</TABLE>
+>];
+// Service Type
+service_type [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Service Type</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>name</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>code</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">description</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>transit_mode</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>gl_type</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">external_id_1</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">external_id_2</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">performance_rating</FONT>        </TD><TD><FONT COLOR="#000000">number</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>priority</B></FONT>        </TD><TD><FONT COLOR="#000000">int</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>effective_date</B></FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">expiry_date</FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">The type of service provided in a contract.</TD></TR>
+</TABLE>
+>];
+// Rate
+rate [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Rate</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">rate_per_unit</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">rate_uom</FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">min_charge</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">max_charge</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">transit_time</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">transit_time_uom</FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">valid_period</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">valid_period_uom</FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>effective_date</B></FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">expiry_date</FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate is a specific price or cost associated with a service defined in the contract.</TD></TR>
+</TABLE>
+>];
+// Rate Type
+rate_type [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Rate Type</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>code</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>name</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">description</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>calculation_method</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate type defines the various pricing structures that can be applied to a service or contract.</TD></TR>
+</TABLE>
+>];
+// Rate Break
+rate_break [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Rate Break</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>break_value</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>break_value_type</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">rate_per_unit</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">rate_uom</FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>effective_date</B></FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">expiry_date</FONT>        </TD><TD><FONT COLOR="#000000">date</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate break defines the conditions under which a different rate applies.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> break_value_type : lower_limit / higher_limit </TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> status: active / inactive / archived </TD></TR>
+</TABLE>
+>];
+// Demurrage Rates
+demurrage_rates [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Demurrage Rates</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>free_days</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>calculation_type</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>charges</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>direction</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">Demurrage rates are charges applied for the prolonged use of a service beyond the agreed-upon time.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> direction : export / import </TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> calculation_type : combined / standard </TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> status: active / inactive / archived </TD></TR>
+</TABLE>
+>];
+// Demurrage Rates Break
+demurrage_rates_break [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Demurrage Rates Break</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>break_value</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>break_value_type</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>charges</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate break defines the conditions under which a different rate applies.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> break_value_type : lower_limit / higher_limit </TD></TR>
+</TABLE>
+>];
+// Detention Rates
+detention_rates [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Detention Rates</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>free_days</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>calculation_type</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>charges</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>direction</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">Detention rates are charges applied for the prolonged use of a service beyond the agreed-upon time.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> direction : export / import </TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> calculation_type : combined / standard </TD></TR>
+</TABLE>
+>];
+// Detention Rates Break
+detention_rates_break [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Detention Rates Break</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>break_value</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>break_value_type</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>charges</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#000000">notes</FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#000000">false</FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">A rate break defines the conditions under which a different rate applies.</TD></TR>
+            <TR><TD COLSPAN="3" BGCOLOR="#F5F5F5" HEIGHT="2"> break_value_type : lower_limit / higher_limit </TD></TR>
+</TABLE>
+>];
+// Contract Charge
+contract_charge [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Contract Charge</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">The charges applied for the utilisation of the services defined in the contract.</TD></TR>
+</TABLE>
+>];
+// Service Commitment
+service_commitment [label=<
+<TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3">
+    <TR>
+        <TD BGCOLOR="#722323" COLSPAN="3">
+            <FONT COLOR="white"><B>Service Commitment</B></FONT>
+        </TD>
+    </TR>
+    <TR>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Field</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Type</B></FONT></TD>
+        <TD BGCOLOR="#722323"><FONT COLOR="white"><B>Required</B></FONT></TD>
+    </TR>
+    <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>id</B></FONT>        </TD><TD><FONT COLOR="#000000">UUID</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>name</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>code</B></FONT>        </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>transit_min</B></FONT>        </TD><TD><FONT COLOR="#000000">int</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>transit_max</B></FONT>        </TD><TD><FONT COLOR="#000000">int</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>transit_uom</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>delivery_by_time</B></FONT>        </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>validate_period</B></FONT>        </TD><TD><FONT COLOR="#000000">int</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>validate_period_uom</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>cut_off_time</B></FONT>        </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>is_guaranteed</B></FONT>        </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD ALIGN="LEFT">                <FONT COLOR="#DC2626"><B>status</B></FONT>        </TD><TD><FONT COLOR="#000000">ENUM</FONT></TD><TD ALIGN="CENTER">                <FONT COLOR="#DC2626"><B>true</B></FONT>        </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> is_deleted </B></FONT>            </TD><TD><FONT COLOR="#000000">bool</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> created_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_time </B></FONT>            </TD><TD><FONT COLOR="#000000">timestamp</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+            <TR><TD ALIGN="LEFT">                    <FONT COLOR="#DC2626"><B> updated_by </B></FONT>            </TD><TD><FONT COLOR="#000000">string</FONT></TD><TD ALIGN="CENTER">                    <FONT COLOR="#DC2626"><B>true</B></FONT>            </TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFECCC" HEIGHT="2"></TD></TR>
+        <TR><TD COLSPAN="3" BGCOLOR="#FFFFFF">The commitment to provide a service at a defined level.</TD></TR>
+</TABLE>
+>];
+
+// Relationships
+    party -> party_version [label="CURRENT_VERSION", fontsize=9, color="#666666"];    party -> party [label="PARENT", fontsize=9, color="#666666"];    party -> party [label="ULTIMATE_PARENT", fontsize=9, color="#666666"];    party_version -> party_version [label="NEXT_VERSION", fontsize=9, color="#666666"];    party -> party [label="ROLE", fontsize=9, color="#666666"];    party -> party [label="SUPPLIES_TO", fontsize=9, color="#666666"];    party -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    party_version -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    location_details -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    contract -> party [label="CARRIER_PARTY", fontsize=9, color="#666666"];    contract -> party [label="SHIPPER_PARTY", fontsize=9, color="#666666"];    contract -> rate [label="SPECIFIES_RATE", fontsize=9, color="#666666"];    contract -> service_type [label="COVERS", fontsize=9, color="#666666"];    contract -> contract_charge [label="HAS_CHARGE", fontsize=9, color="#666666"];    contract -> demurrage_rates [label="DEFINES_DEMURRAGE", fontsize=9, color="#666666"];    contract -> detention_rates [label="DEFINES_DETENTION", fontsize=9, color="#666666"];    contract -> location_details [label="SOURCE_LOCATION", fontsize=9, color="#666666"];    contract -> location_details [label="DESTINATION_LOCATION", fontsize=9, color="#666666"];    rate -> rate_type [label="OF_TYPE", fontsize=9, color="#666666"];    rate -> rate_break [label="APPLIES_BREAK", fontsize=9, color="#666666"];    demurrage_rates -> demurrage_rates_break [label="APPLIES_BREAK", fontsize=9, color="#666666"];    detention_rates -> detention_rates_break [label="APPLIES_BREAK", fontsize=9, color="#666666"];    service_type -> service_commitment [label="HAS_COMMITMENT", fontsize=9, color="#666666"];    contract -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    rate -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    demurrage_rates -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    detention_rates -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    rate_type -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    rate_break -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    demurrage_rates_break -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    detention_rates_break -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    service_commitment -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    service_type -> tag [label="HAS_TAG", fontsize=9, color="#666666"];    contract_charge -> tag [label="HAS_TAG", fontsize=9, color="#666666"];
+// Layout hints
+    {rank=same; contract;}
+    {rank=same; rate; demurrage_rates; detention_rates;}
+    {rank=same; service_type; service_commitment;}
+    {rank=same; party;}
+    {rank=same; party_version;}
+    {rank=same; location_details;}
+}

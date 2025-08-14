@@ -1776,6 +1776,19 @@
         {"name": "updated_by", "type": "date", "is_required": true}
       ]
     },
+    {
+      "id": "rel_location_details_tag",
+      "from_entity": "location_details",
+      "to_entity": "tag",
+      "label": "HAS_TAG",
+      "relationship_type": "many_to_one",
+      "fields": [
+        {"name": "created_time", "type": "timestamp", "is_required": true},
+        {"name": "created_by", "type": "string", "is_required": true},
+        {"name": "updated_time", "type": "timestamp", "is_required": true},
+        {"name": "updated_by", "type": "date", "is_required": true}
+      ]
+    },
     {"id": "rel_contract_carrier", "from_entity": "contract", "to_entity": "party", "label": "CARRIER_PARTY", "relationship_type": "many_to_many"},
     {"id": "rel_contract_shipper", "from_entity": "contract", "to_entity": "party", "label": "SHIPPER_PARTY", "relationship_type": "many_to_many"},
     {"id": "rel_contract_rate", "from_entity": "contract", "to_entity": "rate", "label": "SPECIFIES_RATE", "relationship_type": "one_to_many"},
@@ -1792,7 +1805,18 @@
     {"id": "rel_service_commitment", "from_entity": "service_type", "to_entity": "service_commitment", "label": "HAS_COMMITMENT", "relationship_type": "one_to_many"},
     {"id": "rel_location_area", "from_entity": "location", "to_entity": "location_details", "label": "BELONGS_TO", "relationship_type": "one_to_many"},
     {"id": "rel_location_address", "from_entity": "location", "to_entity": "address", "label": "HAS_REGION", "relationship_type": "one_to_many"},
-    {"id": "rel_address_area", "from_entity": "address", "to_entity": "location_details", "label": "BELONGS_TO", "relationship_type": "one_to_many"}
+    {"id": "rel_address_area", "from_entity": "address", "to_entity": "location_details", "label": "BELONGS_TO", "relationship_type": "one_to_many"},
+    {"id": "rel_contract_tag", "from_entity": "contract", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_rate_tag", "from_entity": "rate", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_demurrage_rates_tag", "from_entity": "demurrage_rates", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_detention_rates_tag", "from_entity": "detention_rates", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_rate_type_tag", "from_entity": "rate_type", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_rate_break_tag", "from_entity": "rate_break", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_demurrage_rates_break_tag", "from_entity": "demurrage_rates_break", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_detention_rates_break_tag", "from_entity": "detention_rates_break", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_service_commitment_tag", "from_entity": "service_commitment", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_service_type_tag", "from_entity": "service_type", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"},
+    {"id": "rel_contract_charge_tag", "from_entity": "contract_charge", "to_entity": "tag", "label": "HAS_TAG", "relationship_type": "one_to_many"}
   ],
   "layout_hints": {
     "same_rank_groups": [
